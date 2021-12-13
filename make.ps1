@@ -28,8 +28,8 @@ $CHOCO_PACKAGES = @(
   "rapidee"
   "vlc"
   "licecap"
-  "synologydrive"
-  # "qttabbar"
+  # "synologydrive"
+  "qttabbar"
   "cica"
   "cascadiacodepl"
   "font-hackgen-nerd"
@@ -130,7 +130,7 @@ $Shortcut.Save()
 New-Item -Path $env:APPDATA\memo -Force -ItemType Directory
 
 # ssh
-New-Item -Path $env:USERPROFILE\.ssh -Force -ItemType Directory
+# New-Item -Path $env:USERPROFILE\.ssh -Force -ItemType Directory
 
 # runas
 Start-Process powershell.exe ("-NoProfile -Command cd " + $env:USERPROFILE + "\.dotfiles; .\runas.ps1") -Verb runas
