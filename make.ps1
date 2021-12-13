@@ -2,7 +2,6 @@
 # Set-ExecutionPolicy -Scope Process Unrestricted
 
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
-$EMACSD= "$env:USERPROFILE\.emacs.d"
 
 # Chocolatey
 try {
@@ -52,7 +51,7 @@ $SCOOP_PACKAGES = @(
   "7zip"
   "bat"
   "concfg"
-  "emacs"
+  "vim"
   "everything"
   "fd"
   "fzf"
@@ -102,14 +101,6 @@ else {
   git clone https://github.com/hushin/dotfiles-windows $DOTFILES
 }
 
-# spacemacs
-if (Test-Path ("$EMACSD")) {
-  Set-Location $EMACSD
-  git pull
-}
-else {
-  git clone https://github.com/syl20bnr/spacemacs $EMACSD
-}
 [System.Environment]::SetEnvironmentVariable("HOME", "$env:USERPROFILE", "User")
 
 # profile
